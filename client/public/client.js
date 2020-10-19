@@ -7,8 +7,17 @@ console.log(Form)
 
 listAllPosts();
 
+const loading = document.querySelector('.loading')
+const loadingImg = document.querySelector('#loading')
+const form = document.querySelector('.post_form')
+
 Form.addEventListener('submit', (event) => {
 
+    form.style.visibility = 'hidden'
+    loading.style.visibility = 'visible'
+    loadingImg.style.visibility = 'visible'
+    
+  
     event.preventDefault(); //impede a página de recarregar automaticamente quando envia o post
 
     const formData = new FormData(Form) //formdata é uma função presente no js https://developer.mozilla.org/pt-BR/docs/Web/API/FormData/FormData
@@ -40,8 +49,19 @@ Form.addEventListener('submit', (event) => {
             listAllPosts(); //recarrega a lista de posts
             
         })
+
+        setTimeout(() => {  
+
+            loadingImg.style.visibility = 'hidden'
+            loading.style.visibility = 'hidden'
+            form.style.visibility = 'visible'
+            
+        
+        }, 1500)
+
+        
              
-  
+    
 })
 
 

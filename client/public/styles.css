@@ -16,15 +16,39 @@
     width:100%;    
     margin: auto;
     overflow: hidden;
-   
+    
+
 }
 
 .imagem > img {
-    
-    
-    display:block;
+
+    display: block;
+    object-fit: contain;
+    object-position: 0 -60px;
     margin: 0 auto;
+ 
 }
+
+.loading {
+
+    visibility: hidden;
+    margin:0 0;
+    height: 20vh;
+    width: 100%;
+    
+}
+
+.loading img{
+    
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: 0 0 ;
+    visibility: hidden;
+    display: block;
+    margin-left: 40vw;
+}
+
 .post_form{
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -113,3 +137,4 @@
     grid-column: 1/3;
     
 }
+
