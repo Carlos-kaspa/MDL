@@ -4,10 +4,15 @@ const { networkInterfaces } = require('os'); //coisa do cors
 const monk = require('monk');
 
 
-
-const db = monk('localhost/MDL')
-const posts = db.get('posts');
+const APIKeys = require('./APIKeys')//kaspa:kaspadb963963@cluster0.ozzf9.mongodb.net/MDLPosts?retryWrites=true&w=majority'
+const db = monk(APIKeys.dbKey)
+const posts = db.get('Posts');
 const app = express();
+
+db.then(() => {
+    console.log('Connected to database')
+  })
+
 
 app.use(cors()); //invoca o pacote do cors para o express
 app.use(express.json());//adiciona a capacidade de interpretar ( separar/parse ) o arquivo json, permitindo a leitura pelo server
@@ -45,9 +50,11 @@ app.get('/posts', (req,res) => {
 app.post('/posts', (req,res) => {
 
     if(isValid(req.body)){ //validação para saber se o post tem conteúdo
+        
+
         const post = {
 
-            name:req.body.name.toString(),
+            name:req.body.name.toString().charAt(0).toUpperCase()+req.body.name.slice(1),
             message: req.body.message.toString(),
             created_date: new Date()
         }
@@ -57,6 +64,8 @@ app.post('/posts', (req,res) => {
 
         posts.insert(post).then(createdPost => {
             res.json(createdPost)
+
+            console.log(createdPost)
            
         });
 
@@ -67,6 +76,7 @@ app.post('/posts', (req,res) => {
         res.json({
             message: 'Nome e mensagem são obrigatórios, seu sabichão!'
         })
+        
     }
 })
 

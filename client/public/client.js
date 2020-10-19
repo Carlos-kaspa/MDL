@@ -1,8 +1,11 @@
 const api_url = 'http://localhost:5000/posts';
 
 const Form = document.querySelector('form') //captura a tag form, mas podia usar getelementbyclasname ou id caso quisesse.
+const postsMural = document.querySelector('.posts');
 
 console.log(Form)
+
+listAllPosts();
 
 Form.addEventListener('submit', (event) => {
 
@@ -18,16 +21,75 @@ Form.addEventListener('submit', (event) => {
         message
     }
 
-    fetch(api_url,{ //fetch para gerar um api que envie um objeto json com os posts para o servidor
+
+    //fetch para gerar um api que envie um objeto json com os posts para o servidor
+    fetch(api_url,{ 
+
         method: 'POST',
         body: JSON.stringify(post),
         headers: {
             'content-type': 'application/json'
         }
+
     })
 
-   console.log(post) //debug
+        .then(response => response.json()).then(createdPost => {
+            
+            console.log(createdPost);
+            Form.reset();
+            listAllPosts(); //recarrega a lista de posts
+            
+        })
+             
+  
 })
 
 
 
+
+function listAllPosts(){
+
+    postsMural.innerHTML = ' '; //deixa a div dos posts limpa antes de recarregar
+
+
+    fetch(api_url).then(response => response.json()).then(posts => {
+
+        posts.reverse()
+
+        posts.forEach(posts => {
+
+            const div = document.createElement('div');
+
+            const header = document.createElement('h2');            
+            header.textContent = posts.nome || posts.name;
+
+            const date = document.createElement('p2');
+            date.textContent = new Date(posts.created_date);
+
+            const content = document.createElement('p');
+            content.textContent = posts.message; //text content evita que alguma injeção de html seja feita, ele transforma o conteúdo em texto e não em interpeta como código.
+
+        
+            div.appendChild(header);
+            div.appendChild(date);
+            div.appendChild(content);
+        
+
+            postsMural.appendChild(div)
+
+ 
+        })
+
+        setTextColor()
+
+    })
+
+    
+
+}
+
+function setTextColor () {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    document.querySelector('body').style.backgroundColor = "#" + randomColor;
+    color.innerHTML = "#" + randomColor;
+  }

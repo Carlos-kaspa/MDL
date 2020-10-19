@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 4chan da massa </title>
+    <title> Chorando todo dia o dia todo </title>
    
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     
-    <header>
-        <a href="interface.html">Interface</a>
-        <span>|</span>
+<div class="imagem">
+    <img src="https://s2.glbimg.com/fo2r5E00p__tLQW-LCCKoria7zU=/0x0:1387x974/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/Y/B/6xd3sUTXKn5CBEbOozNg/bolsonaromuro2.jpg" alt="imagem do bolsonaro no muro das lamentações">
+</div>
+
+    <header id="menu">
+       
+        
         <a href="/">Home</a>
+        <span>|</span>
+        <a href="/posts">DB</a>
     
-        <h1> 4CHAN de pobre </h1>
+        <h1> Muro Das Lamentações </h1>
+        <p> Exponha a sua frustração para o mundo! </p>
     </header>
 
     <main>
@@ -23,16 +30,20 @@
         <form class="post_form">
 
            
-                <label for="fname" >User</label>
+                <label for="fname" >Nome</label>
                 <input type="text" name="fname">
                 
-                <label for="fmessage">Message</label>
+                <label for="fmessage">Mensagem</label>
                 <textarea type="text" name="fmessage"> </textarea> 
       
 
             <button>Enviar</button>
 
-        </form>   
+        </form>
+        
+        <div class="posts">
+            
+        </div>
 
     </main>
     <script src="client.js"></script>
