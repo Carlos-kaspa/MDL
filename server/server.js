@@ -4,7 +4,7 @@ const { networkInterfaces } = require('os'); //coisa do cors
 const monk = require('monk');
 
 
-const APIKeys = require('./APIKeys')//kaspa:kaspadb963963@cluster0.ozzf9.mongodb.net/MDLPosts?retryWrites=true&w=majority'
+const APIKeys = require('./APIKeys')
 const db = monk(APIKeys.dbKey)
 const posts = db.get('Posts');
 const app = express();
