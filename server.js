@@ -7,12 +7,14 @@ require('dotenv').config()
 
 
 const port = process.env.PORT || 5000;
-const db = monk(process.env.DB_URL || DB_KEY);
+const db = monk(process.env.DB_URL);
 const posts = db.get('Posts');
 const app = express();
 
 db.then(() => {
+
     console.log('Connected to database')
+    
   })
 
 
