@@ -7,7 +7,7 @@ require('dotenv').config()
 
 
 const port = process.env.PORT || 5000;
-const db = monk(process.env.DB_URL);
+const db = monk(process.env.DB_URL || DB_KEY);
 const posts = db.get('Posts');
 const app = express();
 
