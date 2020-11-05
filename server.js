@@ -2,10 +2,11 @@ const express = require('express');
 const cors = require('cors'); // pacote para adicionar headers e evitar o erro de cors na comunicação do live erver com o express
 const { networkInterfaces } = require('os'); //coisa do cors
 const monk = require('monk');
+require('dotenv').config()
 
 
-const APIKeys = require('./APIKeys')
-const db = monk(APIKeys.dbKey)
+
+const db = monk(process.env.DB_URL)
 const posts = db.get('Posts');
 const app = express();
 
