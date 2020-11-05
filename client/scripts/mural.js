@@ -6,7 +6,7 @@ timeline.to(".slider", { x: '-100%', duration: 1 });
 
 /*==== script do mural =====*/
 
-const api_url = 'http://localhost:5000/posts';
+const api_url = 'https://murodl.herokuapp.com/posts';
 
 const Form = document.querySelector('form') //captura a tag form, mas podia usar getelementbyclasname ou id caso quisesse.
 const postsMural = document.querySelector('.posts');
@@ -15,17 +15,11 @@ console.log(Form)
 
 listAllPosts();
 
-const loading = document.querySelector('.loading')
-const loadingImg = document.querySelector('#loading')
 const form = document.querySelector('.post_form')
 
 Form.addEventListener('submit', (event) => {
 
-    form.style.visibility = 'hidden'
-    loading.style.visibility = 'visible'
-    loadingImg.style.visibility = 'visible'
-    
-  
+     
     event.preventDefault(); //impede a página de recarregar automaticamente quando envia o post
 
     const formData = new FormData(Form) //formdata é uma função presente no js https://developer.mozilla.org/pt-BR/docs/Web/API/FormData/FormData
