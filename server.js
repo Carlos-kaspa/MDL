@@ -7,14 +7,14 @@ require('dotenv').config()
 
 
 const port = process.env.PORT || 5000;
-const db = monk(process.env.DB_URL);
+const db = monk(process.env.DB_URL || 'mongodb+srv://admin:QiS6MW6KLxwrlxP2@cluster0.ozzf9.mongodb.net/MDL_DB?retryWrites=true&w=majority');
 const posts = db.get('Posts');
 const app = express();
 
 db.then(() => {
 
     console.log('Connected to database')
-    
+
   })
 
 
