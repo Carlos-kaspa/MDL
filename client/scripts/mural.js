@@ -1,3 +1,11 @@
+/* ===== script de animação ====*/
+
+const timeline = gsap.timeline({ defaults: { ease: "power1.out"} });
+
+timeline.to(".slider", { x: '-100%', duration: 1 });
+
+/*==== script do mural =====*/
+
 const api_url = 'http://localhost:5000/posts';
 
 const Form = document.querySelector('form') //captura a tag form, mas podia usar getelementbyclasname ou id caso quisesse.
@@ -48,18 +56,7 @@ Form.addEventListener('submit', (event) => {
             Form.reset();
             listAllPosts(); //recarrega a lista de posts
             
-        })
-
-        setTimeout(() => {  
-
-            loadingImg.style.visibility = 'hidden'
-            loading.style.visibility = 'hidden'
-            form.style.visibility = 'visible'
-            
-        
-        }, 1500)
-
-        
+        })     
              
     
 })

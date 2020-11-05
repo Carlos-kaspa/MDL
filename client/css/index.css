@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+
+main {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+.landing {
+
+    opacity: 100%;
+    margin: 25vh auto;
+    padding: 2em;
+    grid-column: 2/3;
+
+}
+
+main, .landing {
+
+    animation-name: fadeIn;
+    animation-duration:  5s;
+    animation-timing-function: ease-in;
+}
+
+    @keyframes fadeIn{
+
+        from {
+            opacity: 0
+        }
+        to {
+            opacity: 1;
+        }
+
+    }
+
+
+.intro {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.slider {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 89, 23);
+    height: 100%;
+    width: 100%;
+
+    transform: translateY(100%);/*empurra div para fora da tela, necessário para a animação*/
+
+}
+
+.slider:nth-child(odd) { /*seleciona divs 'slider' intercalas*/
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(236, 235, 234); /*por este motivo: cor diferente*/
+    height: 100%;
+    width: 100%;
+
+    transform: translateY(100%); 
+
+}
+
+
+
+.intro-text {
+
+    font-size: 2em;
+    text-align: center;
+    
+}
+
+.hide {
+
+    background: black;
+    overflow: hidden; /*para esconder o texto quando sair dos limites do g1*/
+}
+
+.text {
+
+    color: whitesmoke;
+    font-family: 'Roboto Condensed';
+    display: inline-block; /*libera o transform no eixo Y da tag span*/
+    transform: translateY(100%);
+
+}
+
+.Outro {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 89, 23);
+    height: 100%;
+    width: 100%;
+
+    transform: translateX(100%)/*empurra div para fora da tela, necessário para a animação*/
+
+}
+   

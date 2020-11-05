@@ -1,6 +1,28 @@
+/* ===== slider de transição =====*/
+
+.slider {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 89, 23);
+    height: 100%;
+    width: 100%;
+
+    transform: translateX(0%)/*empurra div para fora da tela, necessário para a animação*/
+
+}
+
+
+/* ===== css da pagina ==========*/
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
 
+main {
 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
 #menu {
     margin: 0 20vw;
     text-align: center;
@@ -29,32 +51,15 @@
  
 }
 
-.loading {
 
-    visibility: hidden;
-    margin:0 0;
-    height: 20vh;
-    width: 100%;
-    
-}
-
-.loading img{
-    
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-    object-position: 0 0 ;
-    visibility: hidden;
-    display: block;
-    margin-left: 40vw;
-}
 
 .post_form{
 
+    padding: 5vw;
+    grid-column: 2/3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     height: 50vh;
-    margin: 0 20vw;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -70,6 +75,7 @@
 .post_form > textarea {
 
     height: 20vh;
+    width: 90%;
 
 }
 
@@ -82,15 +88,17 @@
 .posts {
 
  margin: 0 3vw;
+ grid-column: 2/3;
+ grid-row: auto;
 
 
 }
 
 .posts > div{   
     
-    
+    width: 90%;
     height: 30vh;
-    margin: 2vh 17vw;
+    margin: 2vh auto;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2;
@@ -130,7 +138,7 @@
 .posts p {
     margin-top: 0;
     vertical-align: top;
-    padding-left: 10vw;
+    padding-left: 1em;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     grid-row: 2;

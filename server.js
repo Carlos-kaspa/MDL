@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors'); // pacote para adicionar headers e evitar o erro de cors na comunicação do live erver com o express
 const { networkInterfaces } = require('os'); //coisa do cors
 const monk = require('monk');
+const path = require('path');
+
 
 require('dotenv').config()
 
@@ -20,7 +22,7 @@ db.then(() => {
 
 app.use(cors()); //invoca o pacote do cors para o express
 app.use(express.json());//adiciona a capacidade de interpretar ( separar/parse ) o arquivo json, permitindo a leitura pelo server
-
+app.use(express.static(path.join(__dirname, '/client')));
 
 app.listen(port,() => {
 
@@ -33,11 +35,16 @@ app.listen(port,() => {
 
 app.get('/', (req,res) => {
 
-    res.json({
-        message: 'olá'
-    })
+    res.sendFile(path.join(__dirname+'/client/views/index.html'));
 
 })
+
+app.get('/mural', (req,res) => {
+
+    res.sendFile(path.join(__dirname+'/client/views/mural.html'));
+
+})
+
 
 function isValid(post){
     //validação se o campo nome e mensagem nao estão em branco ( também é possível usar pacotes npm como o "joi")
