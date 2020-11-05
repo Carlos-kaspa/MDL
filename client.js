@@ -1,4 +1,4 @@
-const api_url = 'http://localhost:5000/posts';
+const api_url = 'https://murodl.herokuapp.com/posts';
 
 const Form = document.querySelector('form') //captura a tag form, mas podia usar getelementbyclasname ou id caso quisesse.
 const postsMural = document.querySelector('.posts');
