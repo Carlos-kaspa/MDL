@@ -52,10 +52,8 @@ function isValid(post){
     //importante passar para toString() para evitar injeções de código e .trim() para tirar os espaços vazios do início e fim
 }
 
-app.get('/posts', (req,res) => {
-    posts.find().then(posts =>{
-        res.json(posts);
-    })
+app.get('/instagram', (req,res) => {
+   res.redirect('https://www.instagram.com/carloxxlima/')
 })
 
 app.post('/posts', (req,res) => {

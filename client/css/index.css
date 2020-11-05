@@ -65,7 +65,7 @@ main, .landing {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(255, 89, 23);
+    background:rgb(224, 224, 224);
     height: 100%;
     width: 100%;
 
@@ -78,7 +78,7 @@ main, .landing {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(236, 235, 234); /*por este motivo: cor diferente*/
+    background:rgb(187, 187, 187); /*por este motivo: cor diferente*/
     height: 100%;
     width: 100%;
 
@@ -90,7 +90,7 @@ main, .landing {
 
 .intro-text {
 
-    font-size: 2rem;
+    font-size: 1rem;
     text-align: center;
     
 }
@@ -115,7 +115,7 @@ main, .landing {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(255, 89, 23);
+    background: rgb(187, 187, 187);
     height: 100%;
     width: 100%;
 
