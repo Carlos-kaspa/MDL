@@ -53,7 +53,14 @@ function isValid(post){
 }
 
 app.get('/instagram', (req,res) => {
-   res.redirect('https://www.instagram.com/carloxxlima/')
+    
+    res.redirect('https://www.instagram.com/carloxxlima/')
+})
+
+app.get('/posts', (req,res) => {
+    posts.find().then(posts =>{
+        res.json(posts);
+    })
 })
 
 app.post('/posts', (req,res) => {
