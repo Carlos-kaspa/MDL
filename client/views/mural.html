@@ -28,12 +28,13 @@
        
         <form class="post_form">
 
-           
-                <label for="fname" >Nome</label>
-                <input type="text" name="fname">
-                
-                <label for="fmessage">Mensagem</label>
-                <textarea type="text" name="fmessage"> </textarea> 
+           <div class="wrapperName">
+                <input type="text" name="fname" autocomplete="off" required>
+                <label for="fname" class="labelName" ><span class="contentName">Nome</span></label>
+            </div> 
+
+                <textarea placeholder="Digite sua lamentação..."type="text"name="fmessage"autocomplete="off" required></textarea> 
+                <label for="fmessage" class="labelMessage"></label>
             
                 
             <button>Enviar</button>
