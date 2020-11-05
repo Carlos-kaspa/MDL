@@ -2,11 +2,12 @@ const express = require('express');
 const cors = require('cors'); // pacote para adicionar headers e evitar o erro de cors na comunicação do live erver com o express
 const { networkInterfaces } = require('os'); //coisa do cors
 const monk = require('monk');
+
 require('dotenv').config()
 
 
-
-const db = monk(process.env.DB_URL)
+const port = process.env.PORT || 5000;
+const db = monk(process.env.DB_URL);
 const posts = db.get('Posts');
 const app = express();
 
@@ -19,7 +20,7 @@ app.use(cors()); //invoca o pacote do cors para o express
 app.use(express.json());//adiciona a capacidade de interpretar ( separar/parse ) o arquivo json, permitindo a leitura pelo server
 
 
-app.listen(5000,() => {
+app.listen(port,() => {
 
     console.log('server is up on port 5000');
 
