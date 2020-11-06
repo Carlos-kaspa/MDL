@@ -11,23 +11,27 @@
 
 main {
 
-   margin:0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    height: 100vh;
    
 }
 
 .landing {
 
-    margin: 0 auto;
+    align-content: center;
     opacity: 100%;
+    grid-column: 2/3;
 
 }
 
 .landing img {
 
-    height: 70vh;
-    width: 70vw;
-    margin: 15vh 12vw;
+    height: 80vh;
+    width: 80vw;
     object-fit: contain;
+    margin: 15vh 10vw;
     
 }
 
