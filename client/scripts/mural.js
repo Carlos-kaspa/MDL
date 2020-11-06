@@ -2,7 +2,7 @@
 
 const timeline = gsap.timeline({ defaults: { ease: "power1.out"} });
 
-timeline.to(".slider", { x: '-100%', duration: 1 });
+timeline.to(".slider", { y: '-100%', duration: 0.7 });
 
 /*==== script do mural =====*/
 

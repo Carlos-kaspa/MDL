@@ -123,11 +123,11 @@ main, .landing {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(187, 187, 187);
+    background: rgb(0, 0, 0);
     height: 100%;
     width: 100%;
 
-    transform: translateX(100%)/*empurra div para fora da tela, necessário para a animação*/
+    transform: translateY(100%)/*empurra div para fora da tela, necessário para a animação*/
 
 }
    
