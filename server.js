@@ -5,6 +5,7 @@ const monk = require('monk');
 const path = require('path');
 
 
+
 require('dotenv').config()
 
 
@@ -55,6 +56,15 @@ function isValid(post){
 app.get('/instagram', (req,res) => {
     
     res.redirect('https://www.instagram.com/carloxxlima/')
+})
+
+app.get('/linkedin', (req,res) => {
+    
+    res.redirect('https://www.linkedin.com/in/carlos-augusto-gomes-de-lima-000a7ab2/')
+})
+app.get('/github', (req,res) => {
+    
+    res.redirect('https://github.com/Carlos-kaspa')
 })
 
 app.get('/posts', (req,res) => {

@@ -18,6 +18,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Oswald&family=Source+Sans+Pro:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('//db.onlinewebfonts.com/c/e3062d8da98d4c90af3ad8613ca226e7?family=Copperplate+Gothic+Bold');
+@import url('//db.onlinewebfonts.com/c/e130d119682ecb567748343bf7f263b0?family=Franklin+Gothic+Book');
+
 
 *   {
     padding: 0;
@@ -36,8 +39,38 @@ main {
 
 }
 
+.headerNav{
 
-#menu {
+    grid-column: 1/4;
+    height: 20vh;
+    width: 100%;
+    background-color: black;
+}
+
+.wrapperNav {
+    margin: 0 auto;
+    padding-top: 5rem;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+.headerNav a, span {
+
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    color:whitesmoke;
+    padding-bottom: 1rem;
+
+}
+
+.headerNav a:hover {
+
+    color: tomato;
+  
+}
+
+#titleSlogan {
 
     grid-column: 2/3;
     grid-row: auto;
@@ -47,36 +80,20 @@ main {
     
 }
 
-#menu a {
-
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: bold;
-    color: rgb(104, 104, 104);
-
-}
 
 
-.imagem {
+#titleSlogan h1 {
 
-    grid-column: 1/4;
-    grid-row: auto;
-    height: 20vh;
-    width:100%;    
-    margin-bottom: 5vh;
-    overflow: hidden;
-    
+    margin-top: 1em;
+    font-family: 'Copperplate Gothic Bold', sans-serif;
+    letter-spacing: 0.2em;
 
 }
 
-.imagem > img {
-
-    display: block;
-    object-fit: contain;
-    object-position: 0 -60px;
-    margin: 0 auto;
- 
+#titleSlogan p {
+    font-family: 'Franklin Gothic Book';
+    letter-spacing: 0.5rem;
 }
-
 
 
 .post_form{
@@ -92,30 +109,30 @@ main {
 
 .wrapperName{
 
-    height:3rem;
+    height: 5rem;
     width: 100%;
     position: relative;
     overflow: hidden;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Copperplate Gothic Bold', sans-serif;
 
 
 }
 .wrapperName input {
     
-    height: 90%;
+    height: 50%;
     width: 100%;
     border: none;
     position: absolute;
-    padding-top: 0.3em;
+    padding-top: 5rem; 
     outline: none;
     font-weight: bold;
     bottom: 3px;
     font-size: 1.5em;
-    
+
 }
 
 .wrapperName label {
-
+    
     position: absolute;
     bottom: 0;
     left: 0;
@@ -132,7 +149,7 @@ main {
     height: 100%;
     width: 100%;
     border-bottom: 3px solid rgb(106, 106, 235);
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -141,15 +158,16 @@ main {
 .contentName {
 
     position: absolute;
-    bottom: 5px;
+    bottom: -1rem;
     left: 0;
     transition: all 0.3s ease;
+    color: rgb(87, 85, 85);
 }
 
 .wrapperName input:focus + .labelName .contentName,
 .wrapperName input:valid + .labelName .contentName{
 
-    transform: translateY(-150%);
+    transform: translateY(-100%);
     color:rgb(106, 106, 235);
 }
 
@@ -174,12 +192,12 @@ main {
 }
 .post_form textarea::placeholder {
 
-    color: rgb(151, 151, 240, 0.5);
+    color: rgb(151, 151, 240, 0.8);
     font-family: 'Open Sans Condensed', sans-serif;
     
 }
 
-.post_form > button {
+.post_form button {
     width: 8rem;
     height: 2rem;
     border: none;
@@ -188,9 +206,17 @@ main {
     margin: 0 auto;
     font-weight: bold;
     color: rgb(8, 8, 8);
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Copperplate Gothic Bold', sans-serif;
+    cursor: pointer;
     
    
+}
+
+.post_form button:hover {
+
+    color: whitesmoke;
+    background: rgb(151, 151, 240, 0.5);
+    transition: 0.3 ease;
 }
 
 .posts {

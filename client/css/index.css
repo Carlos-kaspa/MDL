@@ -20,11 +20,19 @@ main {
 
 .landing {
 
+    align-items: center;
     opacity: 100%;
-    margin: 20vh auto;
+    margin: 10vh auto;
     padding: 2em;
     grid-column: 2/3;
 
+}
+
+.landing img {
+
+    height: 500px;
+    width: 500px;
+    object-fit: scale-down;
 }
 
 main, .landing {
